@@ -1,0 +1,22 @@
+# proj files
+.Rproj.user
+
+# history files
+.Rhistory
+
+# user data
+.Ruserdata
+
+# pdfs
+.pdf
+
+# png
+.png
+
+# jpeg
+.jpeg
+.jpg
+
+# docs
+.doc
+.docx
