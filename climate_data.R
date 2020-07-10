@@ -1,8 +1,12 @@
 library(raster)
 library(readr)
+<<<<<<< HEAD
 library(elevatr)
 library(tidyverse)
 library(tigris)
+=======
+library(tidyverse)
+>>>>>>> c151de464d3f19fdee68d733aa9eaacf25824b78
 
 ##################################################################################################################################
 ####################################################### Shapefiles ###############################################################
@@ -204,76 +208,118 @@ write_rds(tmax_2010, "tmax_2010.rds")
 
 ##################################### prec ##################################### 
 ### 1960 - 1969
-tprecip_1960_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1960-1969.zip"
-tprecip_1960_zip <- file.path(outdir, basename(tprecip_1960_url))
 
-download.file(tprecip_1960_url, tprecip_1960_zip, mode = "wb")
-tprecip_1960_files <- unzip(tprecip_1960_zip, list = TRUE)
-tprecip_1960 <- unzip(tprecip_1960_zip, files = tprecip_1960_files$Name, exdir = outdir) %>%
+prec_1960_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1960-1969.zip"
+prec_1960_zip <- file.path(outdir, basename(prec_1960_url))
+
+download.file(prec_1960_url, prec_1960_zip, mode = "wb")
+prec_1960_files <- unzip(prec_1960_zip, list = TRUE)
+prec_1960 <- unzip(prec_1960_zip, files = prec_1960_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_1960, "tprecip_1960.rds")
+write_rds(prec_1960, "prec_1960.rds")
+
+tmin_1960_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_tmin_1960-1969.zip"
+tmin_1960_zip <- file.path(outdir, basename(tmin_1960_url))
+
+download.file(tmin_1960_url, tmin_1960_zip, mode = "wb")
+tmin_1960_files <- unzip(tmin_1960_zip, list = TRUE)
+tmin_1960 <- unzip(tmin_1960_zip, files = tmin_1960_files$Name, exdir = outdir) %>%
+  raster::stack()
+write_rds(tmin_1960, "tmin_1960.rds")
+
 
 ### 1970 - 1979
-tprecip_1970_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1970-1979.zip"
-tprecip_1970_zip <- file.path(outdir, basename(tprecip_1970_url))
+prec_1970_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1970-1979.zip"
+prec_1970_zip <- file.path(outdir, basename(prec_1970_url))
 
-download.file(tprecip_1970_url, tprecip_1970_zip, mode = "wb")
-tprecip_1970_files <- unzip(tprecip_1970_zip, list = TRUE)
-tprecip_1970 <- unzip(tprecip_1970_zip, files = tprecip_1970_files$Name, exdir = outdir) %>%
+
+download.file(prec_1970_url, prec_1970_zip, mode = "wb")
+prec_1970_files <- unzip(prec_1970_zip, list = TRUE)
+prec_1970 <- unzip(prec_1970_zip, files = prec_1970_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_1970, "tprecip_1970.rds")
+write_rds(prec_1970, "prec_1970.rds")
+
+download.file(tmin_1970_url, tmin_1970_zip, mode = "wb")
+tmin_1970_files <- unzip(tmin_1970_zip, list = TRUE)
+tmin_1970 <- unzip(tmin_1970_zip, files = tmin_1970_files$Name, exdir = outdir) %>%
+  raster::stack()
+write_rds(tmin_1970, "tmin_1970.rds")
+
 
 ### 1980 - 1989
-tprecip_1980_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1980-1989.zip"
-tprecip_1980_zip <- file.path(outdir, basename(tprecip_1980_url))
+prec_1980_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1980-1989.zip"
+prec_1980_zip <- file.path(outdir, basename(prec_1980_url))
 
-download.file(tprecip_1980_url, tprecip_1980_zip, mode = "wb")
-tprecip_1980_files <- unzip(tprecip_1980_zip, list = TRUE)
-tprecip_1980 <- unzip(tprecip_1980_zip, files = tprecip_1980_files$Name, exdir = outdir) %>%
+
+download.file(prec_1980_url, prec_1980_zip, mode = "wb")
+prec_1980_files <- unzip(prec_1980_zip, list = TRUE)
+prec_1980 <- unzip(prec_1980_zip, files = prec_1980_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_1980, "tprecip_1980.rds")
+write_rds(prec_1980, "prec_1980.rds")
+
+download.file(tmin_1980_url, tmin_1980_zip, mode = "wb")
+tmin_1980_files <- unzip(tmin_1980_zip, list = TRUE)
+tmin_1980 <- unzip(tmin_1980_zip, files = tmin_1980_files$Name, exdir = outdir) %>%
+  raster::stack()
+write_rds(tmin_1980, "tmin_1980.rds")
+
 
 ### 1990 - 1999
-tprecip_1990_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1990-1999.zip"
-tprecip_1990_zip <- file.path(outdir, basename(tprecip_1990_url))
+prec_1990_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_1990-1999.zip"
+prec_1990_zip <- file.path(outdir, basename(prec_1990_url))
 
-download.file(tprecip_1990_url, tprecip_1990_zip, mode = "wb")
-tprecip_1990_files <- unzip(tprecip_1990_zip, list = TRUE)
-tprecip_1990 <- unzip(tprecip_1990_zip, files = tprecip_1990_files$Name, exdir = outdir) %>%
+
+download.file(prec_1990_url, prec_1990_zip, mode = "wb")
+prec_1990_files <- unzip(prec_1990_zip, list = TRUE)
+prec_1990 <- unzip(prec_1990_zip, files = prec_1990_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_1990, "tprecip_1990.rds")
+write_rds(prec_1990, "prec_1990.rds")
+
+download.file(tmin_1990_url, tmin_1990_zip, mode = "wb")
+tmin_1990_files <- unzip(tmin_1990_zip, list = TRUE)
+tmin_1990 <- unzip(tmin_1990_zip, files = tmin_1990_files$Name, exdir = outdir) %>%
+  raster::stack()
+write_rds(tmin_1990, "tmin_1990.rds")
+
 
 ### 2000 - 2009
-tprecip_2000_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_2000-2009.zip"
-tprecip_2000_zip <- file.path(outdir, basename(tprecip_2000_url))
+prec_2000_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_2000-2009.zip"
+prec_2000_zip <- file.path(outdir, basename(prec_2000_url))
 
-download.file(tprecip_2000_url, tprecip_2000_zip, mode = "wb")
-tprecip_2000_files <- unzip(tprecip_2000_zip, list = TRUE)
-tprecip_2000 <- unzip(tprecip_2000_zip, files = tprecip_2000_files$Name, exdir = outdir) %>%
+
+download.file(prec_2000_url, prec_2000_zip, mode = "wb")
+prec_2000_files <- unzip(prec_2000_zip, list = TRUE)
+prec_2000 <- unzip(prec_2000_zip, files = prec_2000_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_2000, "tprecip_2000.rds")
+write_rds(prec_2000, "prec_2000.rds")
+
+download.file(tmin_2000_url, tmin_2000_zip, mode = "wb")
+tmin_2000_files <- unzip(tmin_2000_zip, list = TRUE)
+tmin_2000 <- unzip(tmin_2000_zip, files = tmin_2000_files$Name, exdir = outdir) %>%
+  raster::stack()
+write_rds(tmin_2000, "tmin_2000.rds")
 
 ### 2010 - 2018
-tprecip_2010_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_tprecip_2010-2018.zip"
-tprecip_2010_zip <- file.path(outdir, basename(tprecip_2010_url))
+prec_2010_url <- "http://biogeo.ucdavis.edu/data/worldclim/v2.1/hist/wc2.1_2.5m_prec_2010-2018.zip"
+prec_2010_zip <- file.path(outdir, basename(prec_2010_url))
 
-download.file(tprecip_2010_url, tprecip_2010_zip, mode = "wb")
-tprecip_2010_files <- unzip(tprecip_2010_zip, list = TRUE)
-tprecip_2010 <- unzip(tprecip_2010_zip, files = tprecip_2010_files$Name, exdir = outdir) %>%
+download.file(prec_2010_url, prec_2010_zip, mode = "wb")
+prec_2010_files <- unzip(prec_2010_zip, list = TRUE)
+prec_2010 <- unzip(prec_2010_zip, files = prec_2010_files$Name, exdir = outdir) %>%
   raster::stack() %>%
   crop(se) %>%
   mask(se)
-write_rds(tprecip_2010, "tprecip_2010.rds")
+write_rds(prec_2010, "prec_2010.rds")
 ##################################################################################################################################
 
 
@@ -304,3 +350,4 @@ dev.off()
 
 geostack <- read_rds("geostack.rds")
 ##################################################################################################################################
+
