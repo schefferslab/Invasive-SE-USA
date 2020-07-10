@@ -350,3 +350,53 @@ dev.off()
 geostack <- read_rds("geostack.rds")
 ##################################################################################################################################
 
+
+##################################################################################################################################
+################################################# National Land Use / Cover Data #################################################
+##################################################################################################################################
+
+NLCD_hist_urls <- c(
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__13%2Fa9%2Fb5%2F13a9b50a957964f2ee726c5a882d7c2cc366b792",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__75%2F2a%2F8a%2F752a8a31c7461ab1da2e75fecb55420b326abc0f",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__cc%2F89%2F52%2Fcc89521d07a146b5fdcb4e72c7e2fc41972829cd",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__96%2F84%2F38%2F9684384ed1ff1325ebf22c742e9b092839123543",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__26%2Fa6%2F6f%2F26a66fb0d35a75239af09ef1796ffa497f0bbffd",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__5e%2Fad%2F3e%2F5ead3e422f230329fdaa30043a2de530de29df8e",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__3e%2F59%2Ff0%2F3e59f0f8c425c0ffdfa62a50589c240d1fc04d7e",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__e7%2F9b%2F3d%2Fe79b3d89c0104e0c575c60211db617e51336f7ec",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__82%2F7e%2Fba%2F827eba3848a169cb22a172176175eafc25f3d5e1",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__48%2F10%2F9d%2F48109d49914055b2ccf22eebb847447c79937b15",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__be%2F7f%2Fb5%2Fbe7fb56d9d71dd59efc17ac540f81d29efe9ef6c",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__57%2F66%2Fcd%2F5766cd9aca6acacd90f05922334799b9485c38ba",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__60%2Fc0%2F3c%2F60c03c824a7353c50e5d27d3af3a8276cbe30d75",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__f6%2Fb6%2F35%2Ff6b6358c78684dace5d8a348ebffdc033f54d02f",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__cc%2F53%2F53%2Fcc5353181f67b20693c14037ab5f7d039c581d43",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__1b%2F05%2Ffb%2F1b05fbbd2f454c05ab65dc05e9c4b2b28968a4fd",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__9c%2Fdc%2F0e%2F9cdc0ea8d001227bb84c437235a47fa4d3fade0d",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__c8%2F22%2Fd7%2Fc822d707fc13a83a941c45e7906a5fbe6179fd07",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__b4%2F90%2F08%2Fb4900802132d528f4d274717407292122e8ef5ea",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__89%2F88%2Fef%2F8988ef9ef0a73461749945e05e2c7d713e6eb780",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__c6%2Fd3%2F0a%2Fc6d30a21ab8e504c98b875ce2febe1225c0dcec4",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__f7%2Fba%2F7b%2Ff7ba7b9f5a55f54ea67605b9eebd361ff72f16d6",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__43%2Fee%2Feb%2F43eeeb095201e7dedd5e2d2d3c1456085db218f0",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__92%2Fee%2F30%2F92ee3028ffa6c8437338334e662f8fd47b4e912f",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__af%2F07%2Fc8%2Faf07c86eb73f2d1b4d4a25eb4f5198348c31c57a",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__c1%2Fdb%2F93%2Fc1db935e088c63da3777bdf1771498e6d0321bff",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__dc%2Fda%2F1e%2Fdcda1ead018984f07bcef276d1798d811bc9c464",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__51%2Ffc%2Fc1%2F51fcc110f5218aa98977d81aa62295abb8d9c0c0",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__b6%2F75%2Fa3%2Fb675a37311fcae8b757a82d73d1f14ced3248210",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__e8%2Fe1%2F64%2Fe8e164856f6d8fc80bc2350fcf45077f05d15e58",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__f1%2F6c%2F5e%2Ff16c5ec3aaf11fbe78613da3d3acba2119f863ae",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__e7%2F53%2Fb3%2Fe753b35da9dcc2dc56bf94e2aca04e36fef7fdaa",
+"https://www.sciencebase.gov/catalog/file/get/59d3c73de4b05fe04cc3d1d1?f=__disk__12%2F37%2F59%2F123759f1bf4cc99164b3a178984d0f53288f3715")
+ 
+NLCD_hist_list <- list()
+for(i in 1:length(NLCD_hist_urls)){
+  NLCD_hist_list[[i]] <- raster(NLCD_hist_urls[i])
+}
+
+NLCD_hist_stack <- stack(NLCD_hist_list)
+
+write_rds(NLCD_hist_stack, "NLCD_hist_stack.rds")
+
+
