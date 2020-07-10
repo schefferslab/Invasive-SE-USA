@@ -1,12 +1,10 @@
 library(raster)
 library(readr)
-<<<<<<< HEAD
 library(elevatr)
 library(tidyverse)
 library(tigris)
-=======
 library(tidyverse)
->>>>>>> c151de464d3f19fdee68d733aa9eaacf25824b78
+
 
 ##################################################################################################################################
 ####################################################### Shapefiles ###############################################################
@@ -36,10 +34,11 @@ outdir <- tempdir() # Specify your preferred working directory
 #   raster::stack() %>%
 #   crop(se) %>%
 #   mask(se)
-tmin_1960 <- read_rds("tmin_1960.rds") %>%
+tmin_1960 <- read_rds("tmin_1960.rds")
+tmin_1960 <- tmin_1960 %>%
   crop(se) %>%
   mask(se)
-
+plot(tmin_1960)
 write_rds(tmin_1960, "tmin_1960.rds")
 
 ### 1970 - 1979
