@@ -1,0 +1,76 @@
+Value,NAME_STATE,Reclass,NEW_CLASS,microclima_class
+1110,Upland Hardwood Forest,3,Hardwood Forested Uplands,4
+1120,Mesic Hammock,6,Mixed Hardwood-Coniferous,5
+1130,Rockland Hammock,3,Hardwood Forested Uplands,4
+1140,Slope Forest,3,Hardwood Forested Uplands,4
+1150,Xeric Hammock,6,Mixed Hardwood-Coniferous,5
+1200,High Pine and Scrub,4,High Pine & Scrub,1
+1210,Scrub,4,High Pine & Scrub,1
+1213,Sand Pine Scrub,4,High Pine & Scrub,1
+1214,Coastal Scrub,8,Coastal Uplands,11
+1231,Upland Pine,6,Mixed Hardwood-Coniferous,5
+1240,Sandhill,4,High Pine & Scrub,1
+1310,Dry Flatwoods,5,Pine Flatwoods & Dry Prairie,8
+1311,Mesic Flatwoods,5,Pine Flatwoods & Dry Prairie,8
+1312,Scrubby Flatwoods,5,Pine Flatwoods & Dry Prairie,8
+1320,Pine Rockland,5,Pine Flatwoods & Dry Prairie,8
+1330,Dry Prairie,5,Pine Flatwoods & Dry Prairie,8
+1340,Palmetto Prairie,5,Pine Flatwoods & Dry Prairie,8
+1400,Mixed Hardwood-Coniferous,6,Mixed Hardwood-Coniferous,5
+1410,Successional Hardwood Forest,6,Mixed Hardwood-Coniferous,5
+1500,Shrub and Brushland,7,Shrub and Brushland,7
+1600,Coastal Uplands,8,Coastal Uplands,11
+1650,Maritime Hammock,8,Coastal Uplands,11
+1670,Sand Beach (Dry),8,Coastal Uplands,11
+1700,Barren and Outcrop Communities,9,Barren,16
+1800,Cultural - Terrestrial,15,Low Intensity Urban,14
+1821,Low Intensity Urban,15,Low Intensity Urban,14
+1822,High Intensity Urban,16,High Intensity Urban,14
+1830,Rural,17,Rural Lands,16
+1840,Transportation,17,Rural Lands,16
+1850,Communication,17,Rural Lands,16
+1860,Utilities,17,Rural Lands,16
+1870,Extractive,17,Rural Lands,16
+1880,Bare Soil/Clear Cut,9,Barren,16
+2100,Freshwater Non-Forested Wetlands,12,Freshwater Non-Vegetated Wetland,17
+2110,Prairies and Bogs,10,Freshwater Non-Forested Wetland,12
+2120,Marshes,8,Coastal Uplands,11
+2121,Isolated Freshwater Marsh,10,Freshwater Non-Forested Wetland,12
+2123,Floodplain Marsh,10,Freshwater Non-Forested Wetland,12
+2200,Freshwater Forested Wetlands,11,Freshwater Forested Wetland,18
+2210,Cypress/Tupelo(incl Cy/Tu mixed),11,Freshwater Forested Wetland,18
+2211,Cypress,11,Freshwater Forested Wetland,18
+2213,Isolated Freshwater Swamp,11,Freshwater Forested Wetland,18
+2214,Strand Swamp,11,Freshwater Forested Wetland,18
+2215,Floodplain Swamp,11,Freshwater Forested Wetland,18
+2220,Other Coniferous Wetlands,11,Freshwater Forested Wetland,18
+2221,Wet Flatwoods,11,Freshwater Forested Wetland,18
+2230,Other Hardwood Wetlands,11,Freshwater Forested Wetland,18
+2231,Baygall,11,Freshwater Forested Wetland,18
+2232,Hydric Hammock,11,Freshwater Forested Wetland,18
+2300,Non-vegetated Wetland,10,Freshwater Non-Forested Wetland,12
+2400,Cultural - Palustrine,1,Natural or Artificial Lakes & Ponds,17
+3000,Lacustrine,1,Natural or Artificial Lakes & Ponds,17
+3100,Natural Lakes and Ponds,1,Natural or Artificial Lakes & Ponds,17
+3200,Cultural - Lacustrine,1,Natural or Artificial Lakes & Ponds,17
+4000,Riverine,13,Natural Rivers & Streams,17
+4100,Natural Rivers and Streams,13,Natural Rivers & Streams,17
+4200,Cultural - Riverine,1,Natural or Artificial Lakes & Ponds,17
+5000,Estuarine,2,Estuarine,12
+5220,Tidal Flat,8,Coastal Uplands,11
+5240,Salt Marsh,2,Estuarine,12
+5250,Mangrove Swamp,2,Estuarine,12
+5252,Scrub Mangrove,2,Estuarine,12
+5300,Cultural - Estuarine,15,Low Intensity Urban,14
+6000,Marine,2,Estuarine,12
+7000,Exotic Plants,19,Exotic Plants,6
+9100,Unconsolidated Substrate,9,Barren,16
+18331,Cropland/Pasture,18,Agriculture,13
+18332,Orchards/Groves,18,Agriculture,13
+18333,Tree Plantations,6,Mixed Hardwood-Coniferous,5
+18334,Vineyard and Nurseries,18,Agriculture,13
+18335,Other Agriculture,18,Agriculture,13
+22131,Dome Swamp,11,Freshwater Forested Wetland,18
+22132,Basin Swamp,11,Freshwater Forested Wetland,18
+183313,Improved Pasture,17,Rural Lands,16
+1833121,Sugarcane,18,Agriculture,13
